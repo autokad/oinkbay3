@@ -12,6 +12,7 @@ gem 'bootstrap-will_paginate'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'make_voteable'
+gem 'rack-google-analytics'
 
 group :production do
 	gem 'pg'
