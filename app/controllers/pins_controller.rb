@@ -6,7 +6,7 @@ class PinsController < ApplicationController
   # GET /pins.json
   def index
     @pins = Pin.order("created_at desc").page(params[:page]).per_page(30)
-
+	
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @pins }
@@ -16,8 +16,10 @@ class PinsController < ApplicationController
   
   def vote_up
 	@pin = Pin.find(params[:id])
+	
 	current_user.up_vote!(@pin)
 	respond_to do |format|
+		@pinid = @pin.id
 		format.js
 	end
   end
