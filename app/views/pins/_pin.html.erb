@@ -12,11 +12,37 @@
 		</font>
 	</span>
 
-
 	  <% if current_user == pin.user %>
 	    <br><br><p>
 	      <%= link_to 'Edit', edit_pin_path(pin) %>
 	      <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
-	    </p>
+	      <%= form_tag(like_path(pin.id), :remote => true, :style => 'display: inline;') do %>
+		  <%= image_submit_tag("like.png", :alt => "Like!", :title => "Like!") %>
+		  <div id="likes" style="display: inline;">
+			<%= pin.up_votes %>
+		  </div>
+		  <% end %>
+		  <%= form_tag(notlike_path(pin.id), :remote => true, :style => 'display: inline;') do %>
+			<%= image_submit_tag("dislike.png", :alt => "Dislike!", :title => "Dislike!", :style => 'display: inline;') %>
+			<div id="dislikes" style="display: inline;">
+				<%= pin.down_votes %>
+			</div>
+		  <% end %>
+		</p>
+	  <% else %>
+	  <br><br><p>
+		  <%= form_tag(like_path(pin.id), :remote => true, :style => 'display: inline;') do %>
+				<%= image_submit_tag("like.png", :alt => "Like!", :title => "Like!") %>
+				<div id="likes" style="display: inline;">
+					<%= pin.up_votes %>
+				</div>
+			<% end %>
+			<%= form_tag(notlike_path(pin.id), :remote => true, :style => 'display: inline;') do %>
+				<%= image_submit_tag("dislike.png", :alt => "Dislike!", :title => "Dislike!", :style => 'display: inline;') %>
+				<div id="dislikes" style="display: inline;">
+					<%= pin.down_votes %>
+				</div>
+			<% end %>
+	  </p>
 	  <% end %>
 </div>
