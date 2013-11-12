@@ -1,5 +1,5 @@
 <br>
-$boxes = $('<%= j render(@pins.highest_rated) %>')
+$boxes = $('<%= j render(@pins) %>')
 
 $('#pins').append( $boxes ).imagesLoaded( function(){
   $('#pins').masonry( 'reload');
