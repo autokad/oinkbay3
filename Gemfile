@@ -2,15 +2,15 @@ source 'http://rubygems.org'
 ruby "1.9.3"
 
 gem 'rails', '3.2.13'
-gem 'jquery-rails'
-gem 'devise'
-gem 'simple_form'
+gem 'jquery-rails', "3.0.4"
+gem 'devise', "3.0.0"
+gem 'simple_form', "2.1.0"
 gem "paperclip", "3.4.2"
-gem 'aws-sdk'
+gem 'aws-sdk', "1.13.0"
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate'
-gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth', "1.1.4"
+gem 'omniauth-facebook', "1.4.1"
 gem 'make_voteable'
 gem 'rack-google-analytics'
 
