@@ -69,6 +69,15 @@ Oinkbay::Application.configure do
   # In production, :host should be set to the actual host of your application.
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+  ActionMailer::Base.smtp_settings = {
+  :address        => 'smtp.sendgrid.net',
+  :port           => '587',
+  :authentication => :plain,
+  :user_name      => ENV['SENDGRID_USERNAME'],
+  :password       => ENV['SENDGRID_PASSWORD'],
+  :domain         => 'oinkbay.com'
+}
+  
     # Configuring Amazon S3 for Paperflip file uploads
 config.paperclip_defaults = {
   :storage => :s3,

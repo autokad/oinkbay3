@@ -13,6 +13,7 @@
 			<div  id="likeform">
 				<%= render :partial => "likeform" %>
 			</div>
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
 			<h4>Say Something</h4>
 			<%= form_for :comment, url: comments_path do |f| %>
 			  <p>
