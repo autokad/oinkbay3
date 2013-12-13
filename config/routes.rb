@@ -2,6 +2,7 @@ Oinkbay::Application.routes.draw do
   get "users/show"
 
   resources :pins
+  resources :comments
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   match 'users/:id' => 'users#show', as: :user

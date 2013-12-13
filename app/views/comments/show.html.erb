@@ -1,0 +1,14 @@
+<p>
+  <strong class="post-title">ID:</strong>
+ <%= @comment.id %>
+</p>
+ 
+<p>
+  <strong class="comment-text">Text:</strong>
+  <%= @comment.body %>
+</p>
+<p>
+
+by <%= link_to @comment.user.username, @comment.user %>
+</p>
+<%= link_to "Back", :back %>

@@ -13,7 +13,22 @@
 			<div  id="likeform">
 				<%= render :partial => "likeform" %>
 			</div>
-
+			<h4>Say Something</h4>
+			<%= form_for :comment, url: comments_path do |f| %>
+			  <p>
+				<%= f.text_field :body %>
+				<%= f.hidden_field :pin_id, :value => @pin.id %>
+			  </p>
+			  <p>
+				 <%= f.submit "Some Pig!", class: "btn btn-primary btn-custom" %>
+			  </p>
+			<% end %>
+			<hr/>
+			<h4>Comments</h4>
+			<% for comment in @pin.comments %>
+				<p><%= User.find(comment.user_id).username %> said: <%= comment.body %></p> 
+			<% end %>
+			<hr/>
 			<% if current_user == @pin.user %>
 				<%= link_to 'Edit', edit_pin_path(@pin) %> |
 			<% end %>

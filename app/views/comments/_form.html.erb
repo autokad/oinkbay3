@@ -1,0 +1,15 @@
+<%= form_for :comment, url: comments_path do |f| %>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.label :pin %><br>
+    <%= f.collection_select :pin_id, Pin.all, :id, :description  %>
+  </p>
+
+  <p>
+     <%= f.submit "Post!", class: "btn btn-primary btn-custom" %>
+  </p>
+<% end %>
