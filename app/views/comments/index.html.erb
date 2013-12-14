@@ -17,7 +17,7 @@
       <td><%= comment.body %></td>
 	  <td><%= link_to comment.user.username, comment.user %></td>
 	  <td><%= link_to "edit", edit_comment_path(comment.id) %></td>
-	  <td><%= link_to "delete", comment, method: :delete %></td>
+	  <td><% if current_user.id == comment.user_id %> <%= link_to "delete", comment, method: :delete %> <% end %></td>
 	  <!--td><%= comment.pin_id %></td-->
 	   <td><%= link_to comment.pin.description, comment.pin %></td>
     </tr>

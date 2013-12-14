@@ -1,7 +1,7 @@
 ---
 # Readme
 ## Description
-* www.Oinkbay.com is a place to share and comment on pig pictures.
+* www.Oinkbay.com is a place to share and comment on pig pictures!
 
 ## Functionalities
 * Home page with awesome pictures
