@@ -6,23 +6,20 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= tag :meta, name: "viewport", content: "width=device-width, initial-scale=1.0" %>
-	
-	<!-- Facebook Like -->
-		<link rel="image_src" type="image/jpeg" href="assets/somepiglogo-10532757eff2e6d2a9018879acba014d.png" />
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-		  fjs.parentNode.insertBefore(js, fjs);
-		  }(document, 'script', 'facebook-jssdk'));
-		</script>
   </head>
 
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
       <%= yield %>
+	  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=599641386723515";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
       <%= render 'layouts/footer' %>
     </div>
   </body>

@@ -11,9 +11,8 @@
 			</p>
 			
 			<div  id="likeform">
-				<%= render :partial => "likeform" %>
+				<%= render :partial => "likeform" %><div class="fb-share-button" data-href="http://www.oinkbay.com/pins/<%= @pin.id %>" data-width="75" data-type="button_count"></div>
 			</div>
-			<div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
 			<h4>Say Something</h4>
 			<%= form_for :comment, url: comments_path do |f| %>
 			  <p>
